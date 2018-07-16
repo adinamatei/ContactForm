@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="mainContainer">
+        
+        <div id="banner">
+            <div id="iCheck"><i class="fas fa-check-circle"></i></div>
+            <div id="successMessage">Thank you for contacting us</div>
+            <div id="close"><i class="fas fa-times"></i></div>
+        </div>
+
+        <div class="container">
+            <form name="myForm" method="post" action="index.html">
+                <input id="firstName" name="name" type="text" placeholder="First Name">
+                <input id="lastName" name="name" type="text" placeholder="Last Name">
+
+                <div>Gender
+                    <div class="gender">
+                        <input type="radio" id="gm" name="gender" value="m" checked>
+                        <label for="gm">M</label>
+                    </div>
+                    <div class="gender">
+                        <input type="radio" id="gf" name="gender" value="f">
+                        <label for="gf">F</label>
+                    </div>
+                </div>
+
+
+                <textarea name="message" id="textArea" cols="30" rows="10" title="message">Your message here...</textarea>
+
+                <div class="submitButton">
+                    <input id="submit" type="submit" value="Submit">
+                </div>
+
+            </form>
+
+            <div id="imgContainer">
+                <img src="img/Placeholder.jpg" alt="upload image">
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
