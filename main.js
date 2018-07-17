@@ -6,7 +6,11 @@ window.onload = function () {
     });
 
 
-    function validateForm(form) {
+    document.getElementById("textArea").addEventListener("click", function (event) {
+        event.target.value = "";
+    });
+
+    function validateForm() {
 
         const first = document.getElementById('firstName');
         const last = document.getElementById('lastName');
@@ -15,11 +19,18 @@ window.onload = function () {
         const gender = document.getElementsByName('gender');
         const message = document.getElementById('textArea');
 
-
         let genderVal = "";
         let messageVal = "";
 
+        // if the user corrects the error, remove red border
+        first.onfocus = function () {
+            first.classList.remove("redBorder");
+        };
+        last.onfocus = function () {
+            last.classList.remove("redBorder");
+        };
 
+        //get the gender
         for(let i = 0; i < gender.length; i++) {
             if(gender[i].checked) {
                 genderVal = gender[i].value.toUpperCase();
@@ -27,11 +38,12 @@ window.onload = function () {
             }
         }
 
-       if(message.value !== "") {
+       // get the message
+       if(message.value !== "" && message.value !== "Your message here...") {
             messageVal = message.value;
        }
 
-
+        // if the inputs are validated display the banner
         if(checkValidity(first) ) {
             if(checkValidity(last)) {
                 bannerMessage.innerHTML = "Thank you for contacting us, " + first.value;
@@ -44,6 +56,7 @@ window.onload = function () {
         return false;
     }
 
+    //validation function
     function checkValidity(field) {
         let value = field.value;
         //if the field is empty
